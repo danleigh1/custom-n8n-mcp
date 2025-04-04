@@ -5,8 +5,8 @@ USER root
 
 # Install the desired npm packages globally
 RUN npm install -g firecrawl-mcp
-RUN npm install -g airtable-mcp-server
-RUN npm install -g @apify/actors-mcp-server
-RUN npm install -g google-workspace-mcp-server
+RUN npm install  airtable-mcp-server
+RUN npm install  @apify/actors-mcp-server
+RUN npm install  google-workspace-mcp-server
 # Revert to the node user for security purposes
 USER node

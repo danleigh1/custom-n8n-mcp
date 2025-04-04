@@ -5,6 +5,6 @@ USER root
 
 # Install the desired npm packages globally
 RUN npm install -g firecrawl-mcp
-
+RUN npm install airtable-mcp-server
 # Revert to the node user for security purposes
 USER node

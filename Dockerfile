@@ -3,6 +3,9 @@ FROM n8nio/n8n:latest
 # Switch to root user to install global npm packages
 USER root
 
+# Install Git
+RUN apt-get update && apt-get install -y git
+
 # Install the desired npm packages globally
 RUN npm install -g firecrawl-mcp
 RUN npm install -g airtable-mcp-server

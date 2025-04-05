@@ -1,16 +1,16 @@
 FROM n8nio/n8n:latest
 
-# Switch to root user to install global npm packages
+# Switch to root to install global packages and Git
 USER root
 
-# Install Git
-RUN apt-get update && apt-get install -y git
+# Install Git using apk
+RUN apk update && apk add --no-cache git
 
-# Install the desired npm packages globally
+# Install desired npm packages globally
 RUN npm install -g firecrawl-mcp
 RUN npm install -g airtable-mcp-server
-RUN npm install  @apify/actors-mcp-server
-RUN npm install  github.com/danleigh1/google-workspace-mcp-server
+RUN npm install -g @apify/actors-mcp-server
+RUN npm install -g git+https://github.com/danleigh1/google-workspace-mcp-server.git
 
-# Revert to the node user for security purposes
+# Revert to node user
 USER node

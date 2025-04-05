@@ -7,6 +7,6 @@ USER root
 RUN npm install -g firecrawl-mcp
 RUN npm install  airtable-mcp-server
 RUN npm install  @apify/actors-mcp-server
-RUN npm install  github:epaproditus/google-workspace-mcp-server
+RUN npm install  github.com/danleigh1/google-workspace-mcp-server
 # Revert to the node user for security purposes
 USER node
